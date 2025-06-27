@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solo Anime - Sobre</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Ícones do Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('home') }}">Solo Anime</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('sobre') }}">Sobre</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo -->
+    <main class="container my-5">
+        <div class="text-center mb-4">
+            <h1>Sobre o Solo Anime</h1>
+            <p class="lead">Conheça mais sobre o nosso projeto!</p>
+        </div>
+
+        <!-- O que é o Solo Anime -->
+        <div class="row g-4">
+            <div class="col-md-6">
+                <h3>O que é o Solo Anime?</h3>
+                <p>
+                    O Solo Anime é um blog feito com carinho para os fãs de animes clássicos. Aqui você encontra
+                    informações, personagens e trailers de grandes títulos como One Piece, Bleach, Naruto e Dragon Ball.
+                </p>
+                <p>
+                    O projeto foi criado como parte de um trabalho escolar utilizando HTML, CSS e Bootstrap, para
+                    garantir uma experiência visual moderna e responsiva.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h3>Objetivo do Projeto</h3>
+                <p>
+                    Mostrar como é possível criar um site completo, bonito e organizado com tecnologias simples da web.
+                    Também buscamos despertar o interesse por animes em quem ainda não conhece e celebrar os clássicos
+                    que marcaram gerações.
+                </p>
+            </div>
+        </div>
+
+        <!-- Criador -->
+        <section class="text-center mt-5">
+            <img src="{{ url_for('static', filename='img/perfil.jpg') }}" alt="Foto de perfil"
+                class="rounded-circle shadow" style="width: 200px; height: 200px; object-fit: cover;">
+            <h3 class="mt-3">Makson Matozo</h3>
+            <p class="mb-3">Criador do Solo Anime | Estudante e fã de tecnologia e animes</p>
+
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://github.com/Makson-Matozo" target="_blank" class="text-dark fs-4" title="GitHub">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a href="https://www.instagram.com/max__vibes/" target="_blank" class="text-danger fs-4"
+                    title="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/makson-matozo-46911a312/" target="_blank" class="text-primary fs-4"
+                    title="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <p>&copy; 2025 Solo Anime. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
