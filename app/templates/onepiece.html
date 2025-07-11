@@ -33,13 +33,16 @@
     <div id="carouselOnePiece" class="carousel slide container mb-5" data-bs-ride="carousel">
         <div class="carousel-inner rounded shadow">
             <div class="carousel-item active">
-                <img src="{{ url_for('static', filename='img/onepiece/onepiece1.jpg') }}" class="d-block w-100" alt="One Piece Slide 1">
+                <img src="{{ url_for('static', filename='img/onepiece/onepiece1.jpg') }}" class="d-block w-100"
+                    alt="One Piece Slide 1">
             </div>
             <div class="carousel-item">
-                <img src="{{ url_for('static', filename='img/onepiece/onepiece2.jpg') }}" class="d-block w-100" alt="One Piece Slide 2">
+                <img src="{{ url_for('static', filename='img/onepiece/onepiece2.jpg') }}" class="d-block w-100"
+                    alt="One Piece Slide 2">
             </div>
             <div class="carousel-item">
-                <img src="{{ url_for('static', filename='img/onepiece/onepiece3.jpg') }}" class="d-block w-100" alt="One Piece Slide 3">
+                <img src="{{ url_for('static', filename='img/onepiece/onepiece3.jpg') }}" class="d-block w-100"
+                    alt="One Piece Slide 3">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselOnePiece" data-bs-slide="prev">
@@ -54,7 +57,8 @@
     <div class="container mb-5">
         <h2>Sobre o Anime</h2>
         <p>
-            "One Piece" é um anime de aventura criado por Eiichiro Oda. A história acompanha Monkey D. Luffy, um jovem com
+            "One Piece" é um anime de aventura criado por Eiichiro Oda. A história acompanha Monkey D. Luffy, um jovem
+            com
             poderes de borracha, em sua jornada para encontrar o tesouro lendário "One Piece" e se tornar o Rei dos
             Piratas. Com sua tripulação, os Chapéus de Palha, Luffy enfrenta inimigos poderosos e explora um mundo vasto
             e cheio de mistérios.
@@ -65,25 +69,48 @@
     <div class="container mb-5">
         <h2 class="mb-4">Personagens</h2>
         <div class="row text-center g-4">
+            <!-- Luffy -->
             <div class="col-md-3">
-                <img src="{{ url_for('static', filename='img/onepiece/luffy.jpg') }}" class="rounded-circle img-fluid" alt="Luffy"
-                    style="width: 250px; height: 250px; object-fit: cover;">
-                <h5 class="mt-2">Luffy</h5>
+                <button type="button" class="border-0 bg-transparent" data-bs-toggle="modal"
+                    data-bs-target="#modalLuffy">
+                    <img src="{{ url_for('static', filename='img/onepiece/luffy.jpg') }}"
+                        class="rounded-circle img-fluid" alt="Luffy"
+                        style="width: 250px; height: 250px; object-fit: cover;">
+                    <h5 class="mt-2">Luffy</h5>
+                </button>
             </div>
+
+            <!-- Zoro -->
             <div class="col-md-3">
-                <img src="{{ url_for('static', filename='img/onepiece/zoro.jpg') }}" class="rounded-circle img-fluid" alt="Zoro"
-                    style="width: 250px; height: 250px; object-fit: cover;">
-                <h5 class="mt-2">Zoro</h5>
+                <button type="button" class="border-0 bg-transparent" data-bs-toggle="modal"
+                    data-bs-target="#modalZoro">
+                    <img src="{{ url_for('static', filename='img/onepiece/zoro.jpg') }}"
+                        class="rounded-circle img-fluid" alt="Zoro"
+                        style="width: 250px; height: 250px; object-fit: cover;">
+                    <h5 class="mt-2">Zoro</h5>
+                </button>
             </div>
+
+            <!-- Nami -->
             <div class="col-md-3">
-                <img src="{{ url_for('static', filename='img/onepiece/nami.jpg') }}" class="rounded-circle img-fluid" alt="Nami"
-                    style="width: 250px; height: 250px; object-fit: cover;">
-                <h5 class="mt-2">Nami</h5>
+                <button type="button" class="border-0 bg-transparent" data-bs-toggle="modal"
+                    data-bs-target="#modalNami">
+                    <img src="{{ url_for('static', filename='img/onepiece/nami.jpg') }}"
+                        class="rounded-circle img-fluid" alt="Nami"
+                        style="width: 250px; height: 250px; object-fit: cover;">
+                    <h5 class="mt-2">Nami</h5>
+                </button>
             </div>
+
+            <!-- Sanji -->
             <div class="col-md-3">
-                <img src="{{ url_for('static', filename='img/onepiece/sanji.jpg') }}" class="rounded-circle img-fluid" alt="Sanji"
-                    style="width: 250px; height: 250px; object-fit: cover;">
-                <h5 class="mt-2">Sanji</h5>
+                <button type="button" class="border-0 bg-transparent" data-bs-toggle="modal"
+                    data-bs-target="#modalSanji">
+                    <img src="{{ url_for('static', filename='img/onepiece/sanji.jpg') }}"
+                        class="rounded-circle img-fluid" alt="Sanji"
+                        style="width: 250px; height: 250px; object-fit: cover;">
+                    <h5 class="mt-2">Sanji</h5>
+                </button>
             </div>
         </div>
     </div>
@@ -102,7 +129,142 @@
         <p>&copy; 2025 Solo Anime. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- MODAIS -->
+
+    <!-- Modal Luffy -->
+    <!-- Modal Luffy -->
+    <div class="modal fade" id="modalLuffy" tabindex="-1" aria-labelledby="modalLuffyLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content shadow-lg border-0 rounded-4">
+                <div class="modal-header bg-primary text-white rounded-top-4">
+                    <h5 class="modal-title fw-bold" id="modalLuffyLabel">Monkey D. Luffy</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="{{ url_for('static', filename='img/onepiece/luffy.jpg') }}"
+                        class="rounded-circle shadow mb-3"
+                        style="width: 200px; height: 200px; object-fit: cover; border: 5px solid #2d69aa;">
+                    <h5 class="fw-bold mb-3 text-shadow">Capitão dos Chapéus de Palha</h5>
+                    <div class="text-start px-4">
+                        <p><strong>🎂 Data de Nascimento:</strong> 5 de maio</p>
+                        <p><strong>🍖 Comida favorita:</strong> Carne</p>
+                        <p><strong>💥 Fruta do Diabo:</strong> Gomu Gomu no Mi</p>
+                        <p><strong>🎯 Objetivo:</strong> Ser o Rei dos Piratas</p>
+                        <p><strong>📏 Altura:</strong> 1,74 m</p>
+                        <p><strong>💰 Recompensa:</strong> 3.000.000.000 Berries</p>
+                        <p><strong>📍 Origem:</strong> Vila Fuschia</p>
+                    </div>
+                    <hr>
+                    <p class="fst-italic">"Eu vou ser o Rei dos Piratas!"</p>
+                </div>
+                <div class="modal-footer bg-light rounded-bottom-4">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Zoro -->
+    <div class="modal fade" id="modalZoro" tabindex="-1" aria-labelledby="modalZoroLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content shadow-lg border-0 rounded-4">
+                <div class="modal-header bg-primary text-white rounded-top-4">
+                    <h5 class="modal-title fw-bold" id="modalZoroLabel">Roronoa Zoro</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="{{ url_for('static', filename='img/onepiece/zoro.jpg') }}"
+                        class="rounded-circle shadow mb-3"
+                        style="width: 200px; height: 200px; object-fit: cover; border: 5px solid #2d69aa;">
+                    <h5 class="fw-bold mb-3 text-shadow">Espadachim dos Chapéus de Palha</h5>
+                    <div class="text-start px-4">
+                        <p><strong>🎂 Data de Nascimento:</strong> 11 de novembro</p>
+                        <p><strong>🗡️ Estilo de Luta:</strong> Santoryu (Três Espadas)</p>
+                        <p><strong>🎯 Objetivo:</strong> Ser o maior espadachim do mundo</p>
+                        <p><strong>📏 Altura:</strong> 1,81 m</p>
+                        <p><strong>💰 Recompensa:</strong> 1.111.000.000 Berries</p>
+                        <p><strong>📍 Origem:</strong> Vila Shimotsuki</p>
+                    </div>
+                    <hr>
+                    <p class="fst-italic">"Nada vai me impedir. Nem mesmo a morte."</p>
+                </div>
+                <div class="modal-footer bg-light rounded-bottom-4">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Nami -->
+    <div class="modal fade" id="modalNami" tabindex="-1" aria-labelledby="modalNamiLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content shadow-lg border-0 rounded-4">
+                <div class="modal-header bg-primary text-white rounded-top-4">
+                    <h5 class="modal-title fw-bold" id="modalNamiLabel">Nami</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="{{ url_for('static', filename='img/onepiece/nami.jpg') }}"
+                        class="rounded-circle shadow mb-3"
+                        style="width: 200px; height: 200px; object-fit: cover; border: 5px solid #2d69aa;">
+                    <h5 class="fw-bold mb-3 text-shadow">Navegadora dos Chapéus de Palha</h5>
+                    <div class="text-start px-4">
+                        <p><strong>🎂 Data de Nascimento:</strong> 3 de julho</p>
+                        <p><strong>⛈️ Arma:</strong> Clima-Tact (Bastão Meteorológico)</p>
+                        <p><strong>🎯 Objetivo:</strong> Mapear o mundo inteiro</p>
+                        <p><strong>📏 Altura:</strong> 1,70 m</p>
+                        <p><strong>💰 Recompensa:</strong> 366.000.000 Berries</p>
+                        <p><strong>📍 Origem:</strong> Vila Cocoyashi</p>
+                    </div>
+                    <hr>
+                    <p class="fst-italic">"Dinheiro é tudo!"</p>
+                </div>
+                <div class="modal-footer bg-light rounded-bottom-4">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sanji -->
+    <div class="modal fade" id="modalSanji" tabindex="-1" aria-labelledby="modalSanjiLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content shadow-lg border-0 rounded-4">
+                <div class="modal-header bg-primary text-white rounded-top-4">
+                    <h5 class="modal-title fw-bold" id="modalSanjiLabel">Sanji</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="{{ url_for('static', filename='img/onepiece/sanji.jpg') }}"
+                        class="rounded-circle shadow mb-3"
+                        style="width: 200px; height: 200px; object-fit: cover; border: 5px solid #2d69aa;">
+                    <h5 class="fw-bold mb-3 text-shadow">Cozinheiro dos Chapéus de Palha</h5>
+                    <div class="text-start px-4">
+                        <p><strong>🎂 Data de Nascimento:</strong> 2 de março</p>
+                        <p><strong>👞 Estilo de Luta:</strong> Black Leg (somente com as pernas)</p>
+                        <p><strong>🎯 Objetivo:</strong> Encontrar o All Blue</p>
+                        <p><strong>📏 Altura:</strong> 1,80 m</p>
+                        <p><strong>💰 Recompensa:</strong> 1.032.000.000 Berries</p>
+                        <p><strong>📍 Origem:</strong> North Blue</p>
+                    </div>
+                    <hr>
+                    <p class="fst-italic">"Eu nunca usarei minhas mãos numa luta... são pra cozinhar."</p>
+                </div>
+                <div class="modal-footer bg-light rounded-bottom-4">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

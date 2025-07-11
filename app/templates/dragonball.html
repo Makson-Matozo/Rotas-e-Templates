@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Solo Anime - Dragon Ball</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
@@ -14,6 +14,10 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('home') }}">Solo Anime</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
@@ -62,29 +66,44 @@
             </p>
         </div>
 
-        <!-- Personagens -->
+        <!-- Personagens com botões que abrem modais -->
         <div class="container mb-5">
             <h2 class="mb-4">Personagens</h2>
             <div class="row text-center g-4">
+                <!-- Goku -->
                 <div class="col-md-3">
-                    <img src="{{ url_for('static', filename='img/dragonball/goku.jpg') }}" class="rounded-circle img-fluid" alt="Goku"
-                        style="width: 250px; height: 250px; object-fit: cover;">
-                    <h5 class="mt-2">Goku</h5>
+                    <button type="button" class="border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#modalGoku">
+                        <img src="{{ url_for('static', filename='img/dragonball/goku.jpg') }}" class="rounded-circle img-fluid" alt="Goku"
+                            style="width: 250px; height: 250px; object-fit: cover;">
+                        <h5 class="mt-2">Goku</h5>
+                    </button>
                 </div>
+
+                <!-- Vegeta -->
                 <div class="col-md-3">
-                    <img src="{{ url_for('static', filename='img/dragonball/vegeta.jpg') }}" class="rounded-circle img-fluid" alt="Vegeta"
-                        style="width: 250px; height: 250px; object-fit: cover;">
-                    <h5 class="mt-2">Vegeta</h5>
+                    <button type="button" class="border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#modalVegeta">
+                        <img src="{{ url_for('static', filename='img/dragonball/vegeta.jpg') }}" class="rounded-circle img-fluid" alt="Vegeta"
+                            style="width: 250px; height: 250px; object-fit: cover;">
+                        <h5 class="mt-2">Vegeta</h5>
+                    </button>
                 </div>
+
+                <!-- Trunks -->
                 <div class="col-md-3">
-                    <img src="{{ url_for('static', filename='img/dragonball/trunks.jpg') }}" class="rounded-circle img-fluid" alt="Trunks"
-                        style="width: 250px; height: 250px; object-fit: cover;">
-                    <h5 class="mt-2">Trunks</h5>
+                    <button type="button" class="border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#modalTrunks">
+                        <img src="{{ url_for('static', filename='img/dragonball/trunks.jpg') }}" class="rounded-circle img-fluid" alt="Trunks"
+                            style="width: 250px; height: 250px; object-fit: cover;">
+                        <h5 class="mt-2">Trunks</h5>
+                    </button>
                 </div>
+
+                <!-- Piccolo -->
                 <div class="col-md-3">
-                    <img src="{{ url_for('static', filename='img/dragonball/piccolo.jpg') }}" class="rounded-circle img-fluid" alt="Piccolo"
-                        style="width: 250px; height: 250px; object-fit: cover;">
-                    <h5 class="mt-2">Piccolo</h5>
+                    <button type="button" class="border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#modalPiccolo">
+                        <img src="{{ url_for('static', filename='img/dragonball/piccolo.jpg') }}" class="rounded-circle img-fluid" alt="Piccolo"
+                            style="width: 250px; height: 250px; object-fit: cover;">
+                        <h5 class="mt-2">Piccolo</h5>
+                    </button>
                 </div>
             </div>
         </div>
@@ -104,6 +123,128 @@
     <footer class="bg-dark text-white text-center py-3 mt-auto">
         <p>&copy; 2025 Solo Anime. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Modais dos personagens -->
+
+    <!-- Modal Goku -->
+    <div class="modal fade" id="modalGoku" tabindex="-1" aria-labelledby="modalGokuLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content shadow-lg border-0 rounded-4">
+                <div class="modal-header bg-success text-white rounded-top-4">
+                    <h5 class="modal-title fw-bold" id="modalGokuLabel">Son Goku</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="{{ url_for('static', filename='img/dragonball/goku.jpg') }}"
+                        class="rounded-circle shadow mb-3"
+                        style="width: 200px; height: 200px; object-fit: cover; border: 5px solid #198754;">
+                    <h5 class="fw-bold mb-3">O Protetor da Terra</h5>
+                    <div class="text-start px-4">
+                        <p><strong>🎂 Data de Nascimento:</strong> 16 de abril</p>
+                        <p><strong>🎯 Objetivo:</strong> Proteger a Terra e seus amigos</p>
+                        <p><strong>⚔️ Habilidade:</strong> Super Saiyajin</p>
+                        <p><strong>📍 Residência:</strong> Terra</p>
+                        <p><strong>📏 Altura:</strong> 1,75 m</p>
+                    </div>
+                    <hr>
+                    <p class="fst-italic">"Eu sempre vou lutar para proteger aqueles que amo."</p>
+                </div>
+                <div class="modal-footer bg-light rounded-bottom-4">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Vegeta -->
+    <div class="modal fade" id="modalVegeta" tabindex="-1" aria-labelledby="modalVegetaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content shadow-lg border-0 rounded-4">
+                <div class="modal-header bg-danger text-white rounded-top-4">
+                    <h5 class="modal-title fw-bold" id="modalVegetaLabel">Vegeta</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="{{ url_for('static', filename='img/dragonball/vegeta.jpg') }}"
+                        class="rounded-circle shadow mb-3"
+                        style="width: 200px; height: 200px; object-fit: cover; border: 5px solid #dc3545;">
+                    <h5 class="fw-bold mb-3">O Príncipe dos Saiyajins</h5>
+                    <div class="text-start px-4">
+                        <p><strong>🎂 Data de Nascimento:</strong> Desconhecida</p>
+                        <p><strong>🎯 Objetivo:</strong> Ser o mais forte guerreiro Saiyajin</p>
+                        <p><strong>⚔️ Habilidade:</strong> Super Saiyajin</p>
+                        <p><strong>📍 Residência:</strong> Terra</p>
+                        <p><strong>📏 Altura:</strong> 1,64 m</p>
+                    </div>
+                    <hr>
+                    <p class="fst-italic">"Não importa o quão forte você seja, eu sempre vou superar você."</p>
+                </div>
+                <div class="modal-footer bg-light rounded-bottom-4">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Trunks -->
+    <div class="modal fade" id="modalTrunks" tabindex="-1" aria-labelledby="modalTrunksLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content shadow-lg border-0 rounded-4">
+                <div class="modal-header bg-primary text-white rounded-top-4">
+                    <h5 class="modal-title fw-bold" id="modalTrunksLabel">Trunks</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="{{ url_for('static', filename='img/dragonball/trunks.jpg') }}"
+                        class="rounded-circle shadow mb-3"
+                        style="width: 200px; height: 200px; object-fit: cover; border: 5px solid #0d6efd;">
+                    <h5 class="fw-bold mb-3">O Guerreiro do Futuro</h5>
+                    <div class="text-start px-4">
+                        <p><strong>🎂 Data de Nascimento:</strong> Desconhecida</p>
+                        <p><strong>🎯 Objetivo:</strong> Salvar o futuro</p>
+                        <p><strong>⚔️ Habilidade:</strong> Super Saiyajin</p>
+                        <p><strong>📍 Residência:</strong> Terra</p>
+                        <p><strong>📏 Altura:</strong> 1,72 m</p>
+                    </div>
+                    <hr>
+                    <p class="fst-italic">"O futuro pode ser mudado com coragem e força."</p>
+                </div>
+                <div class="modal-footer bg-light rounded-bottom-4">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Piccolo -->
+    <div class="modal fade" id="modalPiccolo" tabindex="-1" aria-labelledby="modalPiccoloLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content shadow-lg border-0 rounded-4">
+                <div class="modal-header bg-success text-white rounded-top-4">
+                    <h5 class="modal-title fw-bold" id="modalPiccoloLabel">Piccolo</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="{{ url_for('static', filename='img/dragonball/piccolo.jpg') }}"
+                        class="rounded-circle shadow mb-3"
+                        style="width: 200px; height: 200px; object-fit: cover; border: 5px solid #198754;">
+                    <h5 class="fw-bold mb-3">O Mestre da Técnica</h5>
+                    <div class="text-start px-4">
+                        <p><strong>🎂 Data de Nascimento:</strong> Desconhecida</p>
+                        <p><strong>🎯 Objetivo:</strong> Proteger a Terra e ajudar Goku</p>
+                        <p><strong>⚔️ Habilidade:</strong> Técnicas de Ki e regeneração</p>
+                        <p><strong>📍 Residência:</strong> Terra</p>
+                        <p><strong>📏 Altura:</strong> 1,85 m</p>
+                    </div>
+                    <hr>
+                    <p class="fst-italic">"O verdadeiro poder está no conhecimento e na disciplina."</p>
+                </div>
+                <div class="modal-footer bg-light rounded-bottom-4">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
